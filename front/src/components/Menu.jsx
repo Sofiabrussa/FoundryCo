@@ -7,19 +7,17 @@ import "../index.css"
 const Menu = () => {
     const [imageIndex, setImageIndex] = useState(0);
 
-
     // Usamos useMemo para memorizar el array de imágenes
     const images = useMemo(() => [
-        "aqu.jpg",
-        "sagi.jpg"
+        "aqu.jpg",  // Ruta de la imagen 1
+        "sagi.jpg", // Ruta de la imagen 2
     ], []); // El array vacío como dependencia asegura que solo se inicialice una vez.
-
 
     useEffect(() => {
         const handleScroll = () => {
-            // Cambiar la imagen a medida que se hace scroll
+            // Obtener la posición de desplazamiento (scroll)
             const scrollPosition = window.scrollY;
-            const newIndex = Math.min(Math.floor(scrollPosition / 500), images.length - 1); // Cambia cada 500px
+            const newIndex = Math.min(Math.floor(scrollPosition / 500), images.length - 1); // Cambia cada 500px de scroll
             setImageIndex(newIndex);
         };
 
