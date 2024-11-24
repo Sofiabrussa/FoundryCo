@@ -17,60 +17,67 @@
   }
 
 /*home*/
-.full-screen-section {
-    height: 90vh; /* Ocupa toda la altura de la ventana */
-    background-color: #f0f0f0; /* Color de fondo opcional */
-    background-image: url('./components/HOME2.0.jpg'); /* Ruta de la imagen */
-    background-size: cover; /* Asegura que la imagen ocupe todo el espacio */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita repeticiones */
-  }
-
-  .centered-title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    color: white;
-    font-size: 8vw; /* Utilizamos 'vw' para que el tamaño de la fuente sea relativo al ancho de la ventana */
-    text-align: center;
-    margin: 0;
+/* Estructura de pantalla dividida */
+.split-screen {
+  display: flex; /* Usamos flexbox para alinear las secciones */
+  height: 90vh; /* Ocupa el 90% de la altura de la ventana */
+  max-height: 90vh; /* Limita la altura máxima al 90% */
+  overflow: hidden; /* Evita desbordamientos de contenido */
+  margin: 0;
+  padding: 0;
 }
 
-/* Párrafo debajo del título */
-.centered-title p {
-    font-size: 3vw; /* Usamos 'vw' para el tamaño de la fuente del párrafo */
-    margin-top: 5px;
+/* Sección izquierda */
+.left-section {
+  flex: 1; /* Ocupa la mitad del espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  text-align: center;
+  color: grey;
+  padding: 20px;
+}
+
+/* Sección derecha */
+.right-section {
+  flex: 1; /* Ocupa la mitad del espacio disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 0; /* Elimina el padding para evitar bordes blancos */
+  margin: 0; /* Elimina el margen para evitar bordes blancos */
 }
 
 /* Línea horizontal */
 .horizontal-line {
-    width: 20%; /* Reducción del tamaño en pantallas grandes */
-    height: 4px;
-    background-color: white;
-    margin: 20px 0;
+  width: 50px; /* Ajusta el tamaño según sea necesario */
+  height: 4px;
+  background-color: grey;
+  margin: 20px 0;
 }
 
-/* Medios de consulta para pantallas pequeñas */
-@media (max-width: 768px) {
-    .centered-title {
-        font-size: 10vw; /* Aumenta el tamaño de la fuente en pantallas más pequeñas */}
-
-    .centered-title p {
-        font-size: 5vw; /* Ajusta el tamaño del párrafo */}
-
-    .horizontal-line {
-        width: 50%; /* Aumenta el tamaño de la línea horizontal en pantallas más pequeñas */}
+/* Carrusel */
+/* Carrusel */
+.carousel {
+  width: 100%;
+  height: 100%; /* Asegura que el carrusel ocupe todo el alto del contenedor */
+  margin: 0; /* Elimina cualquier margen alrededor del carrusel */
+  padding: 0; /* Elimina el relleno dentro del carrusel */
 }
 
-@media (max-width: 480px) {
-    .centered-title {
-        font-size: 12vw; /* Más grande en pantallas muy pequeñas */}
-
-    .centered-title p {
-        font-size: 6vw; /* Ajuste adicional en párrafos */}
-
-    .horizontal-line {
-        width: 80%; /* La línea horizontal ocupa más espacio en pantallas muy pequeñas */}
+.carousel-inner {
+  width: 100%;
+  height: 100%; /* Asegura que las imágenes ocupen todo el espacio disponible */
 }
+
+.carousel-item img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+  height: 100%; /* Asegura que la imagen ocupe toda la altura */
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+  display: block;
+  margin: 0; /* Elimina cualquier margen alrededor de la imagen */
+}
+
